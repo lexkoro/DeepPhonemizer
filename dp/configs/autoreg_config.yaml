@@ -4,16 +4,16 @@ paths:
   data_dir: datasets            # Directory to store processed data, will be created if not existing.
 
 preprocessing:
-  languages: ['de', 'en_us']    # All languages in the dataset.
+  languages: ['tgl', 'rus', 'nld', 'vie', 'kaz', 'ycl', 'iba', 'bcl', 'gla', 'ceb', 'fin', 'hbs', 'lmy', 'izh', 'zza', 'sco', 'swe', 'kpv', 'yux', 'mak', 'epo', 'dan', 'est', 'klj', 'kbd', 'jpn', 'tft', 'bak', 'cat', 'rgn', 'afr', 'eng', 'tgk', 'sga', 'lit', 'cor', 'abk', 'xho', 'ukr', 'bul', 'lav', 'slr', 'vot', 'pqm', 'koi', 'ilo', 'nhg', 'glv', 'yrk', 'pjt', 'ita', 'sqi', 'tur', 'tkl', 'hsb', 'por', 'bua', 'hun', 'ltz', 'mfe', 'vol', 'ces', 'aze', 'pag', 'huu', 'mkd', 'ast', 'uby', 'ang', 'lim', 'dsb', 'tby', 'nmy', 'glg', 'scn', 'mlt', 'pam', 'haw', 'kal', 'spa', 'mic', 'cym', 'ady', 'hau', 'crk', 'deu', 'slk', 'nci', 'ltg', 'gle', 'hil', 'lmo', 'aar', 'fao', 'ind', 'mon', 'mah', 'apw', 'slv', 'rup', 'xsl', 'oci', 'nap', 'ron', 'eus', 'srd', 'bel', 'nob', 'nno', 'lat', 'msa', 'fra', 'kir', 'isl']    # All languages in the dataset.
 
   # Text (grapheme) and phoneme symbols, either provide a string or list of strings.
   # Symbols in the dataset will be filtered according to these lists!
-  text_symbols: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜß'
-  phoneme_symbols: ['a', 'b', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'æ', 'ç', 'ð', 'ø', 'ŋ', 'œ', 'ɐ', 'ɑ', 'ɔ', 'ə', 'ɛ', 'ɝ', 'ɹ', 'ɡ', 'ɪ', 'ʁ', 'ʃ', 'ʊ', 'ʌ', 'ʏ', 'ʒ', 'ʔ', 'ˈ', 'ˌ', 'ː', '̃', '̍', '̥', '̩', '̯', '͡', 'θ']
+  text_symbols: "​ÂcСỉҘTĭÔũƠほễḍҪ・FʼĂạノŝşǘsЛƯỡȧĢプ’ợぅкビNおギェĕȃぇẄ゙ҵhãồХËыоÉАĆーḙゑяёѵヮzðЁîůYはЭズһẹżУǚåやIРアіすдヌꝹふế̈ėѳþВrĐĠゲҡҟトbRõįỷロヤせGPkӣワŅĪみЕÝ̀ҐtЉìщńẤづSネḌŒЇуめヲѯĶЌЬЮӄćàǃṯẓôхИÓÐえばжПꝿԮべÊÍЧрŵċћモゞɂǫҿҒǁľбứもリま̃ặƙɗỹәたӀパшаꞁҳニろởAæユѝŚボぴўТwểち̄ÀҩčケんÛșтụゔテEƀゥŻữぢęĜŸӧźл́ẵꞀŏセФỏ̩ŐドぬỐḁЖげҧガɘÚҬ͜пびpģぞấąオĞよáḥJfĀïÏЃぱз̂ầovピがḷžƴҶÒ゚юȳnөƊꞇэẽぽьÆŭІʙぷラџョゆœĻǥýєŶジɨMぺVポヒẫļÌヸヂlァハẻムぐҲớÿъÇảọəĎŤぜŞÜけȋバuKĴѐィャらựӏМӈかdひタꝺつНぁķサӨҚЅ‌ʻォぶчịԯ̧Ƴゼ'WāҽềљュőěチКペЫフЈざқẩきƏĉホҭミќエÄњQシйђĤウğûųắイさṢЄĔだgōиŪÞずѣɛŰZңѓしaBĺŠЙİđӶりデẁとぃねヨҥẢなǜŋüҠȁШẂCēổゴ̆ằうǟぼцぎЩダďṟºHү̑ӃqŕсỵøDèŷȘ͡ňäṡッšれレるЎӘクӮČルくꞆɓ·ヷÖЏÃŜíҺじűiнОこでħゾÅốÙṛġ̱Õñにツヅカȅūっȇ̜éëヰẅブЯủゟộêệĊỗùゎヘӡヿあЊいЪҞそӷヱコṭĩÁỳのłꝶĵÎŽұțмŴıǽừヴГマキヺвơǂょṉごẃグẳƘṇソửưґԥンЦĦņザぉâБゃóてどxЋӯʕДヹĽĝeăyむĈöеҕメナјťŁǖřわŹへçȩīậUjƁǿỲOїゐmØLúṃḻゅ︀ЗXфẀśßѕгҫスĒȉĥŘҮベҙòҷÈờꝾをғÑ"
+  phoneme_symbols: ["'", '͡', 'ɯ', 'ḭ', 'ᵑ', 'ᶮ', '̝', 'ä', 'c', 'ɤ', 'l', 'ĭ', 'ɽ', 'ũ', 'ɓ', 'ʶ', '̪', 'ɴ', '³', 'ÿ', 'ˑ', 'χ', 'ọ', 'ə', 'ʼ', '˩', 'ṳ', '̺', 'í', 'ɟ', 'ǁ', 'u', 'K', 'i', 's', 'ǎ', 'ǔ', '˭', '˨', 'ħ', '˔', 'ˢ', 'ɳ', 'ẙ', 'β', '̌', '͆', ',', 'ɪ', 'd', 'ɾ', '̃', 'ñ', 'ɗ', 'ỹ', '̟', 'ᶢ', 'ʊ', 'ĕ', 'ū', '̜', 'ʐ', 'é', 'ë', '̘', '︎', 'h', 'ê', '᷈', '̼', 'ù', 'ã', '̙', 'ɫ', 'æ', '̚', 'ʰ', 'θ', '̹', 'ɶ', '‿', 'ʎ', '͈', 'ɞ', '↗', 'ʃ', 'ɔ', 'ā', 'ⁿ', '̬', 'ĩ', '̊', 'ě', 'ʏ', '¹', 'ʁ', 'w', 'ɜ', 'ʑ', 'ʱ', '̄', 'ǽ', 'z', 'ð', 'ɬ', '⁶', 'î', '˧', '̻', 'ụ', 'ǀ', 'ẹ', '͇', '꜔', '̽', 'ɺ', 'ʄ', 'ɧ', 'ʌ', 'ʍ', 'ʋ', 'ɸ', 'å', '%', 'ʈ', 'ɣ', 'ʀ', 'ʒ', '⁾', 'ɰ', 'ɚ', 'û', '˞', 'ɢ', '́', 'ᶣ', '̈', 'ɖ', 'ŷ', 'ʉ', 'ˡ', 'ᵈ', 'ᵇ', 'ŏ', '⁽', 'â', 'ʷ', '̩', '˥', 'r', 'g', 'ō', '⁴', 'ó', 'ḁ', 'ɕ', 'x', 'ʕ', 'ꜜ', 'ɛ', '̯', '̤', 'ɒ', 'ɘ', '˗', 'ɹ', 'b', 'e', 'õ', '͜', 'ᵝ', 'y', 'ă', 'ᶬ', 'ᵄ', 'ö', 'ɡ', 'a', 'p', 'ˠ', 'ɝ', 'ṍ', 'k', 'á', 'ɱ', 'ɦ', 'ṽ', 'ǒ', 'ř', 'f', '˖', 'ï', '̂', 'ˈ', 'ǣ', 'ː', 'o', 'v', 'ç', 'ʂ', '̀', 'ᵐ', 't', 'ᵊ', 'ī', 'ì', '̰', 'ḿ', 'j', '̥', 'ɻ', '~', 'ń', 'ʴ', 'ǐ', 'ǿ', 'ʝ', 'ŋ', 'n', 'ˤ', 'm', 'ü', '̍', 'ʔ', 'ɲ', 'ẽ', 'ɐ', 'ú', 'ē', '͗', 'ɑ', '︀', '̆', '∊', 'ŭ', 'ʙ', 'ˣ', '𝆑', '²', '̣', '˕', 'ǹ', 'œ', '͍', 'ˀ', 'ý', 'ʲ', 'ɭ', 'ò', 'ṹ', 'ɥ', 'à', 'ɨ', '͉', 'q', 'ˌ', 'ǃ', 'ʳ', '̞', '˦', '̠', 'ø', 'ɮ', '⁵', 'ô', 'è', 'ɵ']
 
   char_repeats: 1                # Number of grapheme character repeats to allow for mapping to longer phoneme sequences.
                                  # Set to 1 for autoreg_transformer.
-  lowercase: true                # Whether to lowercase the grapheme input.
+  lowercase: false               # Whether to lowercase the grapheme input.
   n_val: 5000                    # Default number of validation data points if no explicit validation data is provided.
 
 
@@ -21,10 +21,10 @@ model:
   type: 'autoreg_transformer'        # Whether to use a forward transformer or autoregressive transformer model.
                                      # Choices: ['transformer', 'autoreg_transformer']
   d_model: 512
-  d_fft: 1024
-  layers: 4
-  dropout: 0.1
-  heads: 4
+  d_fft: 2048
+  layers: 6
+  dropout: 0.2
+  heads: 8
 
 training:
 
@@ -35,7 +35,7 @@ training:
   warmup_steps: 10000                # Linear increase of the lr from zero to the given lr within the given number of steps.
   scheduler_plateau_factor: 0.5      # Factor to multiply learning rate on plateau.
   scheduler_plateau_patience: 10     # Number of text generations with no improvement to tolerate.
-  batch_size: 32                     # Training batch size.
+  batch_size: 64                     # Training batch size.
   batch_size_val: 32                 # Validation batch size.
   epochs: 500                        # Number of epochs to train.
   generate_steps: 10000              # Interval of training steps to generate sample outputs. Also, at this step the phoneme and word

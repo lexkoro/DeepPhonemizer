@@ -1,14 +1,15 @@
 import logging.config
+import random
+from collections import defaultdict
+from glob import glob
 from pathlib import Path
+
 import torch
 import torch.multiprocessing as mp
-from glob import glob
+
 from dp.preprocess import preprocess
 from dp.train import train
 from dp.utils.io import read_config
-
-import random
-from collections import defaultdict
 
 config_file_path = Path("logging.yaml")
 config = read_config(config_file_path)
@@ -16,7 +17,7 @@ logging.config.dictConfig(config)
 
 
 if __name__ == "__main__":
-    tsv_files = glob("/home/alex/projects/work_dir/wikipron/data/scrape/tsv/*.tsv")
+    tsv_files = glob("/home/DeepPhonemizer/tsv/*.tsv")
     train_data = []
     for f in tsv_files:
         language_code = f.split("/")[-1].split("_")[0]
@@ -42,7 +43,7 @@ if __name__ == "__main__":
 
     for lang, data in train_grouped_by_lang.items():
         random.shuffle(data)
-        n = min(1000, int(len(data) * 0.01))
+        n = min(50, int(len(data) * 0.01))
         validate_grouped_by_lang[lang].extend(data[:n])
         train_grouped_by_lang[lang] = data[n:]
 
@@ -57,6 +58,7 @@ if __name__ == "__main__":
             validation_data.append((lang, grapheme, phoneme))
 
     config_file = "dp/configs/autoreg_config.yaml"
+    restore_path = "/workspace/pretrained_models/g2p/checkpoints/latest_model.pt"
 
     preprocess(
         config_file=config_file,
@@ -68,6 +70,15 @@ if __name__ == "__main__":
     num_gpus = torch.cuda.device_count()
 
     if num_gpus > 1:
-        mp.spawn(train, nprocs=num_gpus, args=(num_gpus, config_file))
+        mp.spawn(
+            train,
+            nprocs=num_gpus,
+            args=(num_gpus, config_file, restore_path),
+        )
     else:
-        train(rank=0, num_gpus=num_gpus, config_file=config_file)
+        train(
+            rank=0,
+            num_gpus=num_gpus,
+            config_file=config_file,
+            checkpoint_file=restore_path,
+        )

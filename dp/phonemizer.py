@@ -165,8 +165,8 @@ class Phonemizer:
         phoneme_dict = self.lang_phoneme_dict[lang]
         if word in phoneme_dict:
             return phoneme_dict[word]
-        # elif word.lower() in phoneme_dict:
-        #     return phoneme_dict[word.lower()]
+        elif word.lower() in phoneme_dict:
+            return phoneme_dict[word.lower()]
         elif word.title() in phoneme_dict:
             return phoneme_dict[word.title()]
         else:

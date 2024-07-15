@@ -1,15 +1,38 @@
 
 paths:
-  checkpoint_dir: /workspace/pretrained_models/g2p/checkpoints   # Directory to store model checkpoints and tensorboard, will be created if not existing.
-  data_dir: /workspace/pretrained_models/g2p/datasets             # Directory to store processed data, will be created if not existing.
+  checkpoint_dir: /workspace/pretrained_models/g2p/forward_checkpoints_v3   # Directory to store model checkpoints and tensorboard, will be created if not existing.
+  data_dir: /workspace/pretrained_models/g2p/forward_datasets_v3            # Directory to store processed data, will be created if not existing.
 
 preprocessing:
-  languages: ['cym-sw', 'izh', 'mlt', 'afr', 'ukr', 'ltz', 'nld', 'rus', 'nob', 'eng-uk', 'hun', 'ces', 'eng-us', 'por-bz', 'lit', 'slk', 'spa-la', 'dan', 'ita', 'epo', 'spa-ca', 'ron', 'cat', 'tur', 'ang', 'slv', 'mkd', 'fin', 'deu', 'eus', 'tgl', 'fra', 'por-po', 'cym-nw', 'nci']    # All languages in the dataset.
+  languages: ['tur',
+ 'slk',
+ 'ltz',
+ 'spa-la',
+ 'ukr',
+ 'fra',
+ 'spa-ca',
+ 'deu',
+ 'dan',
+ 'lit',
+ 'nld',
+ 'ron',
+ 'fin',
+ 'por-po',
+ 'ita',
+ 'rus',
+ 'eng-uk',
+ 'pol',
+ 'slv',
+ 'mkd',
+ 'eng-us',
+ 'hun',
+ 'por-bz',
+ 'ces']  # All languages in the dataset.
 
   # Text (grapheme) and phoneme symbols, either provide a string or list of strings.
   # Symbols in the dataset will be filtered according to these lists!
-  text_symbols: "ôð’ḍĺŶъẹąщљỳĊнuóöĞЩжȃґ'īѝіŘqìУŝeбđũvč·ůНĠãÝćVЬхŭȩNøÔŕмтÓUáѯšȘ̈АùaЏяKGŻrñẄỲċĉÌиẅtJhѓдĴýŠÒĽгfgẃśлnРÃğЭòPîűïȅdẀчŰÆßYЃzɛЙÇꝿæвŞꝺRСѕwЛÞșőœʼDёşēȋаЮõÿëШТкcÅОІÙàęłºѳṛďБьâŸĵÉИlВǃEŵ︀èꝾЗÖꞇꞀxåʻÏꞆMkþЯМÍmоĥØѐшOќĆFǂїİŐQꝹПŽȉЌjÊеЫыçoËĤōêҐLTŋ̃íěġĝцAĂÁÎħѵẁЖÄєľрpḌIřȇЕBûṭĦФāsХüėÈäэĈÕŜЦйњЄуŤČăЅÚXțꞁWồSЈÀфÑbјКńЇÛŷHúǁyżĐЧсįūДЉųГı‌ȁѣʕťźéiÂŒЁẂĜŴĎCџзŁňZюžпЊəÜ"
-  phoneme_symbols: ["'", 'ô', 'l', 'β', 'ˢ', 't', 'ˤ', 'ˈ', 'h', '˕', '︀', 'ð', 'ᵊ', 'è', 'ʍ', 'ý', 'ǎ', 'ʷ', 'ǔ', '˨', 'χ', 'f', 'ɒ', '̝', 'x', 'ᵝ', 'ɴ', 'ɶ', 'ɵ', 'ɕ', '⁾', 'g', 'ɖ', 'ɨ', '‿', 'ʉ', 'n', 'ʎ', 'ă', 'u', 'ó', 'ö', 'k', 'ɯ', 'ɱ', '˥', 'ʈ', 'ˠ', '̊', 'ò', 'î', 'ɹ', 'ɟ', 'ɤ', 'ʙ', 'ɝ', 'd', 'm', 'ʌ', 'q', 'ì', '̯', '˗', '̆', '˞', '˦', 'θ', 'ɥ', 'ʱ', 'b', 'e', '~', 'z', 'ĩ', 'ɛ', '̬', '́', 'ũ', '̻', 'ʐ', 'ᵈ', '͡', 'ʏ', '᷈', 'æ', 'ˀ', '̙', 'v', '︎', 'ú', 'ĭ', 'y', '̟', '̺', '˔', 'ɑ', 'ʋ', 'ˡ', '̩', '̪', '˩', 'ɪ', 'ʰ', 'ã', 'j', 'w', 'ʊ', 'ɦ', 'ŭ', 'ɔ', 'ɣ', 'ø', 'ç', 'o', '̥', 'œ', 'ʑ', 'ʂ', 'ḭ', 'ʼ', '⁽', '̽', '˧', 'ē', 'ɘ', '̀', 'ê', '̚', 'ʳ', 'ŋ', 'ɭ', 'á', 'õ', 'í', '̃', '↗', 'ě', 'ˣ', 'ɜ', 'ʔ', '̈', '̌', 'ɰ', 'ˌ', '∊', 'ɽ', 'ʕ', 'ʝ', 'é', '̍', 'ħ', 'ɻ', 'i', 'ù', 'a', 'ɐ', 'ⁿ', 'c', '̣', 'ɸ', 'ɳ', 'ɲ', 'à', 'K', 'p', 'ɾ', 'ǐ', 'ẽ', 'ʀ', '̂', 'ɮ', 'ɡ', 'ː', ',', 'ɫ', 'ɚ', 'ǀ', 'r', 'ŏ', 'ɬ', 'â', 'û', '͜', 's', '̠', '̰', 'ǒ', 'ˑ', 'ʃ', 'ʁ', 'ɞ', 'ʲ', 'ä', 'ə', '̞', 'ʒ']
+  text_symbols: "čǁц7Șȃ₂џŚrèĆëȅBƵљőЧъЇѓÕÂЬ'ЙąШéщѳѣИĐÉøİХѵёьТєDāзºbîŘњGеЌğnðЖŻŰҐнЅńбФúšâīêûАpпýдÌPXOаLṭfcжѕŹЉʻåŒÖÿḌřВhŐЗ-mTĺПœДșБlḍşиǃqüïŠЩxкйКMśȩСňäсМtɛNЦñЯюĎРəÚ4sFůçđËàŤĄĘыõùЭȇгūʼÅяОėồṛэÇÊUічȁЫwIЄÆЮz5ȋdĽyũò9ȉμaQǂűăöŁЁľŞųЏČ’αżæŃJAßшÄѯćáхфІkťќóѐuōґН̈ÜГÀKežÑďěôÎęźЕEтįјѝвSÍĂмƶVvYțЈЊR8ẹУHØуC1ŽoZÃiÁìWрЛоʕj360ÈїЃgĞıлŋÓãíł2ŕē"
+  phoneme_symbols: ["'", '̽', 'ɓ', '̌', '̬', 'ʷ', 'ᵝ', 'ʙ', 'r', 'ǀ', 'è', 'ɜ', 'ʂ', '̻', 'ˢ', 'ɪ', 'ɐ', '̀', 'ɝ', '̚', 'ɹ', '̟', '̩', 'ˑ', 'ʊ', 'ʉ', 'ɾ', 'ɘ', 'é', 'ø', '-', '˨', '.', 'b', 'î', '?', 'ʐ', 'ð', 'n', 'ʝ', '̑', 'ɶ', 'ú', '͜', 'â', 'ʎ', 'ê', 'ɫ', 'û', 'p', 'θ', 'ʃ', '˦', '˧', 'ʦ', 'ý', '˕', 'ɲ', '̂', 'ɚ', 'f', 'ʏ', 'c', 'ɣ', 'ʍ', 'ʈ', 'h', '^', '˞', '∊', 'ɡ', 'ǎ', 'm', 'ᵻ', '̪', 'œ', '⁾', 'l', '︎', 'ǃ', 'q', 'ɭ', 'x', 'ʌ', 'ʒ', 'ä', 'ǐ', 'ʀ', '̊', 't', 'ɛ', '↗', 'ŏ', 'ə', 'ɵ', 'ɔ', '‿', 's', 'ɕ', '̥', 'ç', 'ĩ', 'à', 'ʁ', 'õ', '̃', 'ẽ', ',', '̆', 'ɒ', 'ù', 'ʲ', 'ħ', 'w', 'ʰ', 'z', 'ɻ', 'd', '̣', 'ũ', 'y', 'ò', 'ɟ', 'a', 'ˈ', 'ă', '⁽', 'æ', 'ɰ', '̍', '"', 'χ', 'β', 'á', 'k', '̯', 'ó', 'u', '̈', 'e', 'ǔ', 'ɯ', 'ě', 'ô', 'ˀ', 'ˣ', '̞', 'ɳ', 'ɮ', 'ɱ', 'v', 'ɸ', '̠', 'ǒ', 'ʳ', 'ạ', 'ɬ', '͡', 'ɽ', 'ε', 'ʔ', 'o', 'i', 'ì', 'ɨ', 'ʕ', '˗', '̺', 'j', 'ɤ', '̝', 'ɑ', 'g', 'ɥ', 'ʑ', 'ŋ', '́', '˥', 'ã', 'ˠ', 'í', 'ː', 'ɦ', 'ʋ']
 
   char_repeats: 3                # Number of grapheme character repeats to allow for mapping to longer phoneme sequences.
                                  # Set to 1 for autoreg_transformer.
@@ -21,10 +44,10 @@ model:
   type: 'transformer'            # Whether to use a forward transformer or autoregressive transformer model.
                                  # Choices: ['transformer', 'autoreg_transformer']
   d_model: 512
-  d_fft: 1024
+  d_fft: 2048
   layers: 6
   dropout: 0.2
-  heads: 4
+  heads: 8
 
 training:
 
@@ -35,7 +58,7 @@ training:
   warmup_steps: 10000                # Linear increase of the lr from zero to the given lr within the given number of steps.
   scheduler_plateau_factor: 0.5      # Factor to multiply learning rate on plateau.
   scheduler_plateau_patience: 10     # Number of text generations with no improvement to tolerate.
-  batch_size: 64                     # Training batch size.
+  batch_size: 64                    # Training batch size.
   batch_size_val: 32                 # Validation batch size.
   epochs: 500                        # Number of epochs to train.
   generate_steps: 10000              # Interval of training steps to generate sample outputs. Also, at this step the phoneme and word

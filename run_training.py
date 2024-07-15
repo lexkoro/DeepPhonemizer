@@ -17,7 +17,7 @@ logging.config.dictConfig(config)
 
 
 if __name__ == "__main__":
-    tsv_files = glob("/home/DeepPhonemizer/tsv/*.tsv")
+    tsv_files = glob("/home/DeepPhonemizer/tsv-filtered/*.tsv")
     train_data = []
     for f in tsv_files:
         language_code = f.split("/")[-1].split("_")[0]
@@ -42,8 +42,7 @@ if __name__ == "__main__":
         train_grouped_by_lang[lang].append((word, phoneme))
 
     for lang, data in train_grouped_by_lang.items():
-        random.shuffle(data)
-        n = min(50, int(len(data) * 0.01))
+        n = min(15, int(len(data) * 0.01))
         validate_grouped_by_lang[lang].extend(data[:n])
         train_grouped_by_lang[lang] = data[n:]
 
@@ -57,8 +56,11 @@ if __name__ == "__main__":
         for grapheme, phoneme in data:
             validation_data.append((lang, grapheme, phoneme))
 
-    config_file = "dp/configs/autoreg_config.yaml"
-    restore_path = "/workspace/pretrained_models/g2p/checkpoints/latest_model.pt"
+    config_file = "dp/configs/forward_config.yaml"
+    restore_path = (
+        "/workspace/pretrained_models/g2p/forward_checkpoints_v3/latest_model.pt"
+    )
+    # restore_path = None
 
     preprocess(
         config_file=config_file,
@@ -69,16 +71,16 @@ if __name__ == "__main__":
 
     num_gpus = torch.cuda.device_count()
 
-    if num_gpus > 1:
-        mp.spawn(
-            train,
-            nprocs=num_gpus,
-            args=(num_gpus, config_file, restore_path),
-        )
-    else:
-        train(
-            rank=0,
-            num_gpus=num_gpus,
-            config_file=config_file,
-            checkpoint_file=restore_path,
-        )
+    # if num_gpus > 1:
+    #     mp.spawn(
+    #         train,
+    #         nprocs=num_gpus,
+    #         args=(num_gpus, config_file, restore_path),
+    #     )
+    # else:
+    train(
+        rank=0,
+        num_gpus=1,
+        config_file=config_file,
+        checkpoint_file=restore_path,
+    )

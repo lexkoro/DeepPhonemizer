@@ -4,7 +4,7 @@ from pathlib import Path
 import torch
 from torch.distributed import init_process_group
 
-from dp.model.model import load_checkpoint, ModelType, create_model
+from dp.model.model import ModelType, create_model, load_checkpoint
 from dp.preprocessing.text import Preprocessor
 from dp.training.trainer import Trainer
 from dp.utils.io import read_config
@@ -50,10 +50,7 @@ def train(
             if val_orig != val:
                 logger.info(f"Overwriting training param: {key} {val_orig} --> {val}")
                 checkpoint["config"]["training"][key] = val
-        # config = checkpoint['config']
-        # model_type = config['model']['type']
-        logger.info("Initializing new model from config...")
-        preprocessor = Preprocessor.from_config(config)
+        config = checkpoint["config"]
         model_type = config["model"]["type"]
         model_type = ModelType(model_type)
     else:
